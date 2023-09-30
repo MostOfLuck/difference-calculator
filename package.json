@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/MostOfLuck/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/MostOfLuck/frontend-project-46/actions)",
   "main": "index.js",
+  "bin": {
+  "gendiff": "src/gendiff.js"
+  },
   "scripts": {
+    "help": "node src/gendiff.js -h",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -12,3 +16,4 @@
     "commander": "^11.0.0"
   }
 }
+
