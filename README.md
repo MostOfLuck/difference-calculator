@@ -1,7 +1,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/MostOfLuck/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/MostOfLuck/frontend-project-46/actions)
 
-<a href="https://github.com/OWNER/REPOSITORY/actions/workflows/WORKFLOW-FILE/badge.svg" />
+<a href="https://github.com/MostOfLuck/actions/workflows/node.js.yml/badge.svg" />
 
    <a href="https://codeclimate.com/github/MostOfLuck/frontend-project-46/maintainability"><img src="https://api.codeclimate.com/v1/badges/5d2f223b657ef254075f/maintainability" />
 
