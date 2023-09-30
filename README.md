@@ -2,6 +2,13 @@
 [![Actions Status](https://github.com/MostOfLuck/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/MostOfLuck/frontend-project-46/actions)
 
 
+<p align="center">
+   <a href="https://codeclimate.com/github/MostOfLuck/frontend-project-46/maintainability"><img src="https://api.codeclimate.com/v1/badges/5d2f223b657ef254075f/maintainability" /></a>
+         <a href="https://github.com/MostOfLuck/frontend-project-44/actions">
+      <img src="https://github.com/MostOfLuck/frontend-project-46/workflows/hexlet-check/badge.svg" />
+   </a>
+</p>
+
 genDiff
 --------------------------  
  You can parcel files like this:
