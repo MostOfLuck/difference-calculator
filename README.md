@@ -2,9 +2,9 @@
 [![Actions Status](https://github.com/MostOfLuck/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/MostOfLuck/frontend-project-46/actions)
 
 
-<p align="center">
+
    <a href="https://codeclimate.com/github/MostOfLuck/frontend-project-46/maintainability"><img src="https://api.codeclimate.com/v1/badges/5d2f223b657ef254075f/maintainability" />
-</p>
+
 
 genDiff
 --------------------------  
