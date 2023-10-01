@@ -9,7 +9,7 @@
   },
   "scripts": {
     "help": "node src/gendiff.js -h",
-    "test": "jest",
+    "test": "env-cmd -f .env jest",
     "simple-git-hooks": "simple-git-hooks"
   },
   "author": "",
@@ -22,6 +22,8 @@
     "@babel/core": "^7.23.0",
     "@babel/preset-env": "^7.22.20",
     "babel-jest": "^29.7.0",
+    "cross-env": "^7.0.3",
+    "env-cmd": "^10.1.0",
     "eslint": "^8.50.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-jest": "^27.4.2",
