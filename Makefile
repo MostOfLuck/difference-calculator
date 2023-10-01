@@ -8,7 +8,8 @@ install-deps:
 	npm ci
 
 test:
-	npm test
+	npm link
+
 
 test-coverage:
 	npm test -- --coverage --coverageProvider=v8
