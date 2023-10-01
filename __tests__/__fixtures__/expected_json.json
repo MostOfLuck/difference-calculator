@@ -1,0 +1,13 @@
+{
+  "common": {
+    "setting1": "Value 1",
+    "setting2": "Value 2"
+  },
+  "added": {
+    "setting3": "Value 3"
+  },
+  "removed": {
+    "setting4": "Value 4"
+  }
+}
+
