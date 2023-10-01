@@ -1,8 +1,9 @@
 import { readFileSync } from 'fs';
+import path from 'path';
 import genDiff from '../src/gendiff.js';
 
-const file1Path = '__tests__/__fixtures__/file1.json';
-const file2Path = '__tests__/__fixtures__/file2.json';
+const file1Path = path.join(__dirname, '__fixtures__/file1.json');
+const file2Path = path.join(__dirname, '__fixtures__/file2.json');
 
 test('Compare flat JSON files (stylish format)', () => {
   const expected = readFileSync('__tests__/__fixtures__/expected_stylish.txt', 'utf-8');
