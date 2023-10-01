@@ -14,7 +14,8 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^11.0.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "node.js": "^0.0.1-security"
   },
   "devDependencies": {
     "eslint": "^8.50.0",
