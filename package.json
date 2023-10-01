@@ -8,8 +8,8 @@
   },
   "scripts": {
     "help": "node src/gendiff.js -h",
-    "test": "echo \"Error: no test specified\" && exit 1",
-	"simple-git-hooks": "simple-git-hooks"
+    "test": "jest",
+    "simple-git-hooks": "simple-git-hooks"
   },
   "author": "",
   "license": "ISC",
