@@ -26,3 +26,13 @@ $  gendiff file1.yml file2.yml
 ```
 
  Demonstration: <a href="https://asciinema.org/a/611590" target="_blank"><img src="https://asciinema.org/a/602271.svg" /></a>
+
+
+Recursive comparison
+--------------------------  
+ You can parcel yml and json files like this:
+ ```bash
+$  gendiff file1.json file2.yml
+```
+
+ Demonstration: <a href="https://asciinema.org/a/611644" target="_blank"><img src="https://asciinema.org/a/602271.svg" /></a>
