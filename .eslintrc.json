@@ -12,8 +12,9 @@
   },
   "rules": {
     "no-console": 0,
+    'no-use-before-define': ['error', { functions: false }],
     "import/extensions": ["error", "ignorePackages", { "js": "always" }],
     "no-underscore-dangle": [2, { "allow": ["__filename", "__dirname"] }]
-  }
+  },
 }
 
