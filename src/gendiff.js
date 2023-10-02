@@ -49,7 +49,6 @@ function generateDiff(data1, data2, depth = 1) {
   return `{\n${result.join('\n')}\n${'  '.repeat(depth - 1)}}`;
 }
 
-// Функция форматирования значений
 function formatValue(value, depth) {
   if (typeof value === 'object' && value !== null) {
     const keys = Object.keys(value);
@@ -95,4 +94,4 @@ program
 
 program.parse(process.argv);
 
-export { formatValue };
+export default formatValue;
