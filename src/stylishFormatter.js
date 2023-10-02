@@ -3,7 +3,7 @@ import formatValue from './gendiff.js';
 
 function formatStylish(data, depth = 0) {
   const indentSize = 4;
-  const indent = ' '.repeat(depth * indentSize);
+  const indent = '.'.repeat(depth * indentSize);
 
   const lines = data.map((item) => {
     const {
@@ -29,7 +29,7 @@ function formatStylish(data, depth = 0) {
     }
   });
 
-  return `{\n${lines.join('\n')}\n${' '.repeat((depth - 1) * indentSize)}}`;
+  return `{\n${lines.join('\n')}\n${'.'.repeat((depth - 1) * indentSize)}}`;
 }
 
 export default formatStylish;
