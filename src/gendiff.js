@@ -1,22 +1,25 @@
 #!/usr/bin/env node
 import { readFileSync } from 'fs';
-import path from 'path';
 import { program } from 'commander';
-import _ from 'lodash';
+import jsYaml from 'js-yaml';
 
-function genDiff(filepath1, filepath2) {
-  const absolutePath1 = path.resolve(filepath1);
-  const absolutePath2 = path.resolve(filepath2);
+function parseJsonFile(filePath) {
+  const fileContent = readFileSync(filePath, 'utf-8');
+  return JSON.parse(fileContent);
+}
 
-  const data1 = JSON.parse(readFileSync(absolutePath1, 'utf-8'));
-  const data2 = JSON.parse(readFileSync(absolutePath2, 'utf-8'));
+function parseYamlFile(filePath) {
+  const fileContent = readFileSync(filePath, 'utf-8');
+  return jsYaml.load(fileContent);
+}
 
+function generateDiff(data1, data2) {
   const keys1 = Object.keys(data1);
   const keys2 = Object.keys(data2);
 
-  const addedKeys = _.difference(keys2, keys1);
-  const removedKeys = _.difference(keys1, keys2);
-  const commonKeys = _.intersection(keys1, keys2);
+  const addedKeys = keys2.filter((key) => !keys1.includes(key));
+  const removedKeys = keys1.filter((key) => !keys2.includes(key));
+  const commonKeys = keys1.filter((key) => keys2.includes(key));
 
   const diff = commonKeys.map((key) => {
     if (data1[key] === data2[key]) {
@@ -40,7 +43,25 @@ program
   .arguments('<filepath1> <filepath2>')
   .option('-f, --format <type>', 'output format')
   .action((filepath1, filepath2) => {
-    const diff = genDiff(filepath1, filepath2);
+    let data1; let data2;
+
+    if (filepath1.endsWith('.json')) {
+      data1 = parseJsonFile(filepath1);
+    } else if (filepath1.endsWith('.yaml') || filepath1.endsWith('.yml')) {
+      data1 = parseYamlFile(filepath1);
+    } else {
+      throw new Error(`Unsupported file format: ${filepath1}`);
+    }
+
+    if (filepath2.endsWith('.json')) {
+      data2 = parseJsonFile(filepath2);
+    } else if (filepath2.endsWith('.yaml') || filepath2.endsWith('.yml')) {
+      data2 = parseYamlFile(filepath2);
+    } else {
+      throw new Error(`Unsupported file format: ${filepath2}`);
+    }
+
+    const diff = generateDiff(data1, data2);
     console.log(diff);
   })
   .parse(process.argv);
