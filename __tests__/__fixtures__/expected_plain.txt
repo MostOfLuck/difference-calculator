@@ -1,4 +1,0 @@
-Property 'common.setting1' was updated. From 'Value 1' to 'New Value'
-Property 'common.setting2' was removed
-Property 'added.setting3' was added with value: 'Value 3'
-
