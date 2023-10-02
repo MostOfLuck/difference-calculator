@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { formatValue } from './gendiff.js';
+import formatValue from './gendiff.js';
 
 function formatStylish(data, depth = 0) {
   const indentSize = 4;
