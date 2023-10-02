@@ -15,7 +15,7 @@ Parcing json
  ```bash
 $  gendiff file1.json file2.json
 ```
- You should decide wheather the number is "even" or not.
+
  Demonstration: <a href="https://asciinema.org/a/611315" target="_blank"><img src="https://asciinema.org/a/602271.svg" /></a>
 
 Parcing yml
@@ -24,5 +24,5 @@ Parcing yml
  ```bash
 $  gendiff file1.yml file2.yml
 ```
- You should decide wheather the number is "even" or not.
+
  Demonstration: <a href="https://asciinema.org/a/611590" target="_blank"><img src="https://asciinema.org/a/602271.svg" /></a>
