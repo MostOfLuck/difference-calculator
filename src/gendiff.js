@@ -61,13 +61,38 @@ function formatValue(value, depth) {
   return value;
 }
 
+function generatePlainDiff(data1, data2) {
+  const keys1 = Object.keys(data1);
+  const keys2 = Object.keys(data2);
+
+  const addedKeys = keys2.filter((key) => !keys1.includes(key));
+  const removedKeys = keys1.filter((key) => !keys2.includes(key));
+  const updatedKeys = keys1.filter((key) => keys2.includes(key) && data1[key] !== data2[key]);
+
+  const result = [];
+
+  addedKeys.forEach((key) => {
+    result.push(`Property '${key}' was added with value: ${formatValue(data2[key])}`);
+  });
+
+  removedKeys.forEach((key) => {
+    result.push(`Property '${key}' was removed`);
+  });
+
+  updatedKeys.forEach((key) => {
+    result.push(`Property '${key}' was updated. From ${formatValue(data1[key])} to ${formatValue(data2[key])}`);
+  });
+
+  return result.join('\n');
+}
+
 const program = new Command();
 
 program
   .version('1.0.0')
   .description('Compares two configuration files and shows a difference.')
   .arguments('<filepath1> <filepath2>')
-  .option('-f, --format <type>', 'output format')
+  .option('-f, --format <type>', 'output format (json, plain)')
   .action((filepath1, filepath2) => {
     let data1;
     let data2;
@@ -88,10 +113,15 @@ program
       throw new Error(`Unsupported file format: ${filepath2}`);
     }
 
-    const diff = generateDiff(data1, data2);
-    console.log(diff);
+    const { format } = program.opts();
+
+    if (format === 'plain') {
+      const diff = generatePlainDiff(data1, data2);
+      console.log(diff);
+    } else {
+      const diff = generateDiff(data1, data2);
+      console.log(diff);
+    }
   });
 
 program.parse(process.argv);
-
-export default formatValue;
