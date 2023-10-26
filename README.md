@@ -36,3 +36,13 @@ $  gendiff file1.json file2.yml
 ```
 
  Demonstration: <a href="https://asciinema.org/a/611644" target="_blank"><img src="https://asciinema.org/a/602271.svg" /></a>
+ 
+
+ Plain format
+--------------------------  
+ plain format works like this:
+ ```bash
+$  gendiff -f plain file1.json file2.json
+```
+
+ Demonstration: <a href="https://asciinema.org/a/617286" target="_blank"><img src="https://asciinema.org/a/602271.svg" /></a>
