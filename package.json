@@ -3,7 +3,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/MostOfLuck/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/MostOfLuck/frontend-project-46/actions)",
-  "main": "index.js",
+  "main": "src/gendiff.js",
   "bin": {
     "gendiff": "src/gendiff.js"
   },
