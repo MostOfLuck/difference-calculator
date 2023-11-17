@@ -2,7 +2,7 @@
   "type": "module",
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/MostOfLuck/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/MostOfLuck/frontend-project-46/actions)",
+  "description": "This aplication was made to parcel file formats: json, yml, yaml.",
   "main": "src/gendiff.js",
   "bin": {
     "gendiff": "src/gendiff.js"
@@ -12,7 +12,7 @@
     "test": "env-cmd -f .env jest",
     "simple-git-hooks": "simple-git-hooks"
   },
-  "author": "",
+  "author": "MostOfLuck",
   "license": "ISC",
   "dependencies": {
     "commander": "^11.0.0",
