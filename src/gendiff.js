@@ -1,19 +1,19 @@
 #!/usr/bin/env node
 import { readFileSync } from 'fs';
-import { Command } from 'commander';
 import jsYaml from 'js-yaml';
+import { formatValue } from '../formatters/index.js';
 
-function parseJsonFile(filePath) {
+export function parseJsonFile(filePath) {
   const fileContent = readFileSync(filePath, 'utf-8');
   return JSON.parse(fileContent);
 }
 
-function parseYamlFile(filePath) {
+export function parseYamlFile(filePath) {
   const fileContent = readFileSync(filePath, 'utf-8');
   return jsYaml.load(fileContent);
 }
 
-function generateDiff(data1, data2, depth = 1) {
+export function generateDiff(data1, data2, depth = 1) {
   const keys1 = Object.keys(data1);
   const keys2 = Object.keys(data2);
 
@@ -48,108 +48,3 @@ function generateDiff(data1, data2, depth = 1) {
 
   return `{\n${result.join('\n')}\n${'  '.repeat(depth - 1)}}`;
 }
-
-function formatValue(value, depth) {
-  if (typeof value === 'object' && value !== null) {
-    const keys = Object.keys(value);
-    const formattedLines = keys.map((key) => {
-      const formattedValue = formatValue(value[key], depth + 1);
-      return `${' '.repeat(depth * 4)}  ${key}: ${formattedValue}`;
-    });
-    return `{\n${formattedLines.join('\n')}\n${' '.repeat((depth - 1) * 4)}}`;
-  }
-  return value;
-}
-
-function generatePlainDiff(data1, data2) {
-  const keys1 = Object.keys(data1);
-  const keys2 = Object.keys(data2);
-
-  const addedKeys = keys2.filter((key) => !keys1.includes(key));
-  const removedKeys = keys1.filter((key) => !keys2.includes(key));
-  const updatedKeys = keys1.filter((key) => keys2.includes(key) && data1[key] !== data2[key]);
-
-  const result = [];
-
-  addedKeys.forEach((key) => {
-    result.push(`Property '${key}' was added with value: ${formatValue(data2[key])}`);
-  });
-
-  removedKeys.forEach((key) => {
-    result.push(`Property '${key}' was removed`);
-  });
-
-  updatedKeys.forEach((key) => {
-    result.push(`Property '${key}' was updated. From ${formatValue(data1[key])} to ${formatValue(data2[key])}`);
-  });
-
-  return result.join('\n');
-}
-
-function generateJsonDiff(data1, data2) {
-  const keys1 = Object.keys(data1);
-  const keys2 = Object.keys(data2);
-
-  const addedKeys = keys2.filter((key) => !keys1.includes(key));
-  const removedKeys = keys1.filter((key) => !keys2.includes(key));
-  const updatedKeys = keys1.filter((key) => keys2.includes(key) && data1[key] !== data2[key]);
-
-  const result = {};
-
-  addedKeys.forEach((key) => {
-    result[key] = { type: 'added', value: data2[key] };
-  });
-
-  removedKeys.forEach((key) => {
-    result[key] = { type: 'removed', value: data1[key] };
-  });
-
-  updatedKeys.forEach((key) => {
-    result[key] = { type: 'updated', oldValue: data1[key], newValue: data2[key] };
-  });
-
-  return result;
-}
-
-const program = new Command();
-
-program
-  .version('1.0.0')
-  .description('Compares two configuration files and shows a difference.')
-  .arguments('<filepath1> <filepath2>')
-  .option('-f, --format <type>', 'output format (json, plain)')
-  .action((filepath1, filepath2) => {
-    let data1;
-    let data2;
-
-    if (filepath1.endsWith('.json')) {
-      data1 = parseJsonFile(filepath1);
-    } else if (filepath1.endsWith('.yaml') || filepath1.endsWith('.yml')) {
-      data1 = parseYamlFile(filepath1);
-    } else {
-      throw new Error(`Unsupported file format: ${filepath1}`);
-    }
-
-    if (filepath2.endsWith('.json')) {
-      data2 = parseJsonFile(filepath2);
-    } else if (filepath2.endsWith('.yaml') || filepath2.endsWith('.yml')) {
-      data2 = parseYamlFile(filepath2);
-    } else {
-      throw new Error(`Unsupported file format: ${filepath2}`);
-    }
-
-    const { format } = program.opts();
-
-    if (format === 'json') {
-      const diff = generateJsonDiff(data1, data2);
-      console.log(JSON.stringify(diff, null, 2));
-    } else if (format === 'plain') {
-      const diff = generatePlainDiff(data1, data2);
-      console.log(diff);
-    } else {
-      const diff = generateDiff(data1, data2);
-      console.log(diff);
-    }
-  });
-
-program.parse(process.argv);
