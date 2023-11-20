@@ -14,9 +14,11 @@
   "author": "MostOfLuck",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^5.3.0",
     "commander": "^11.1.0",
     "js-yaml": "^4.1.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "node": "^21.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.0",
