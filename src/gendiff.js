@@ -46,7 +46,12 @@ export function generateDiff(data1, data2) {
   });
 
   updatedKeys.forEach((key) => {
-    result[key] = { type: 'updated', oldValue: data1[key], newValue: data2[key] };
+    if (typeof data1[key] === 'object' && typeof data2[key] === 'object') {
+      // Recursively call generateDiff for nested objects
+      result[key] = { type: 'updated', value: generateDiff(data1[key], data2[key]) };
+    } else {
+      result[key] = { type: 'updated', oldValue: data1[key], newValue: data2[key] };
+    }
   });
 
   return result;
