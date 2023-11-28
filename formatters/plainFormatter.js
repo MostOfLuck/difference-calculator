@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import formatValue from './index.js';
+import { formatValue } from '../src/gendiff.js';
 
 export default function generatePlainDiff(data1, data2) {
   const keys1 = Object.keys(data1);
