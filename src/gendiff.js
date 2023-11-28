@@ -1,30 +1,16 @@
 #!/usr/bin/env node
-import fs from 'fs';
-import path from 'path';
+import { readFileSync } from 'fs';
 import jsYaml from 'js-yaml';
 import formatValue from '../formatters/index.js';
 
-export function parseFile(file) {
-  const fileExt = path.extname(file).toLowerCase();
-  const fileContent = fs.readFileSync(file, 'utf-8');
-
-  switch (fileExt) {
-    case '.json':
-      return JSON.parse(fileContent);
-    case '.yml':
-    case '.yaml':
-      return parseYaml(fileContent);
-    default:
-      throw new Error(`Unsupported file format: ${fileExt}`);
-  }
+export function parseJsonFile(filePath) {
+  const fileContent = readFileSync(filePath, 'utf-8');
+  return JSON.parse(fileContent);
 }
 
-export function parseYaml(yamlString) {
-  try {
-    return jsYaml.load(yamlString);
-  } catch (error) {
-    throw new Error(`Error while parsing YAML: ${error.message}`);
-  }
+export function parseYamlFile(filePath) {
+  const fileContent = readFileSync(filePath, 'utf-8');
+  return jsYaml.load(fileContent);
 }
 
 export function generateDiff(data1, data2, depth = 1) {
@@ -61,12 +47,4 @@ export function generateDiff(data1, data2, depth = 1) {
   ];
 
   return `{\n${result.join('\n')}\n${'  '.repeat(depth - 1)}}`;
-}
-
-export default function generateFormattedDiff(file1, file2, format = 'stylish') {
-  const data1 = parseFile(file1);
-  const data2 = parseFile(file2);
-  const diff = generateDiff(data1, data2);
-
-  return formatValue(diff, format);
 }
