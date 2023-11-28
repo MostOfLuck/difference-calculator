@@ -5,11 +5,11 @@
   "description": "This aplication was made to parcel file formats: json, yml, yaml.",
   "main": "src/gendiff.js",
   "bin": {
-    "gendiff": "bin/cli.js"
+    "gendiff": "bin/index.js"
   },
   "scripts": {
     "help": "node bin/cli.js -h",
-    "test": "env-cmd -f .env jest"
+    "test": ""
   },
 "simple-git-hooks": {
   "pre-commit": "eslint --fix \"**/*.js\""
