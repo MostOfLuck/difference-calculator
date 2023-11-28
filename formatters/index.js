@@ -12,7 +12,6 @@ program
   .arguments('<filepath1> <filepath2>')
   .option('-f, --format <type>', 'output format (json, plain)')
   .action((filepath1, filepath2) => {
-    // Assuming the '__tests__/__fixtures__' directory structure
     const fixturesPath = path.resolve(process.cwd(), '__tests__/__fixtures__');
     const fullPath1 = path.join(fixturesPath, filepath1);
     const fullPath2 = path.join(fixturesPath, filepath2);
