@@ -3,6 +3,7 @@ import { Command } from 'commander';
 import path from 'path';
 import { parseYamlFile, generateDiff, parseJsonFile } from '../src/gendiff.js';
 import generatePlainDiff from './plainFormatter.js';
+import formatStylish from './stylishFormatter.js';
 
 const program = new Command();
 
@@ -39,6 +40,9 @@ program
 
     if (format === 'plain') {
       const diff = generatePlainDiff(data1, data2);
+      console.log(diff);
+    } else if (format === 'stylish') {
+      const diff = formatStylish(data1, data2);
       console.log(diff);
     } else {
       const diff = generateDiff(data1, data2);
