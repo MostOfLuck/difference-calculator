@@ -27,34 +27,40 @@ export function parseYaml(yamlString) {
   }
 }
 
-export function generateDiff(data1, data2) {
+export function generateDiff(data1, data2, depth = 1) {
   const keys1 = Object.keys(data1);
   const keys2 = Object.keys(data2);
 
   const addedKeys = keys2.filter((key) => !keys1.includes(key));
   const removedKeys = keys1.filter((key) => !keys2.includes(key));
-  const updatedKeys = keys1.filter((key) => keys2.includes(key) && data1[key] !== data2[key]);
+  const commonKeys = keys1.filter((key) => keys2.includes(key));
 
-  const result = {};
+  const diff = commonKeys.map((key) => {
+    const value1 = data1[key];
+    const value2 = data2[key];
 
-  addedKeys.forEach((key) => {
-    result[key] = { type: 'added', value: data2[key] };
-  });
-
-  removedKeys.forEach((key) => {
-    result[key] = { type: 'removed', value: data1[key] };
-  });
-
-  updatedKeys.forEach((key) => {
-    if (typeof data1[key] === 'object' && typeof data2[key] === 'object') {
-      // Recursively call generateDiff for nested objects
-      result[key] = { type: 'updated', value: generateDiff(data1[key], data2[key]) };
-    } else {
-      result[key] = { type: 'updated', oldValue: data1[key], newValue: data2[key] };
+    if (typeof value1 === 'object' && typeof value2 === 'object') {
+      const nestedDiff = generateDiff(value1, value2, depth + 1);
+      return `    ${'  '.repeat(depth)}${key}: ${nestedDiff}`;
     }
+
+    if (value1 === value2) {
+      return `    ${'  '.repeat(depth)}${key}: ${value1}`;
+    }
+
+    return [
+      `${'  '.repeat(depth)}- ${key}: ${value1}`,
+      `${'  '.repeat(depth)}+ ${key}: ${value2}`,
+    ].join('\n');
   });
 
-  return result;
+  const result = [
+    ...addedKeys.map((key) => `  + ${'  '.repeat(depth)}${key}: ${formatValue(data2[key], depth)}`),
+    ...removedKeys.map((key) => `  - ${'  '.repeat(depth)}${key}: ${formatValue(data1[key], depth)}`),
+    ...diff,
+  ];
+
+  return `{\n${result.join('\n')}\n${'  '.repeat(depth - 1)}}`;
 }
 
 export default function generateFormattedDiff(file1, file2, format = 'stylish') {
