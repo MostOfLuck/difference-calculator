@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 import { readFileSync } from 'fs';
 import jsYaml from 'js-yaml';
-import formatValue from '../formatters/index.js';
 
 export function parseJsonFile(filePath) {
   const fileContent = readFileSync(filePath, 'utf-8');
@@ -11,6 +10,18 @@ export function parseJsonFile(filePath) {
 export function parseYamlFile(filePath) {
   const fileContent = readFileSync(filePath, 'utf-8');
   return jsYaml.load(fileContent);
+}
+
+export function formatValue(value, depth) {
+  if (typeof value === 'object' && value !== null) {
+    const keys = Object.keys(value);
+    const formattedLines = keys.map((key) => {
+      const formattedValue = formatValue(value[key], depth + 1);
+      return `${' '.repeat(depth * 4)}  ${key}: ${formattedValue}`;
+    });
+    return `{\n${formattedLines.join('\n')}\n${' '.repeat((depth - 1) * 4)}}`;
+  }
+  return value;
 }
 
 export function generateDiff(data1, data2, depth = 1) {
