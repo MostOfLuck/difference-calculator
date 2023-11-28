@@ -2,19 +2,18 @@
   "type": "module",
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "This aplication was made to parcel file formats: json, yml, yaml.",
-  "main": "src/gendiff.js",
+  "description": "This application was made to compare file formats: json, yml, yaml.",
   "bin": {
     "gendiff": "bin/cli.js"
   },
   "scripts": {
     "help": "node bin/cli.js -h",
-    "test": "",
-    "start": "node bin/cli.js"
+    "test": "jest",
+    "lint": "eslint --fix \"**/*.js\""
   },
-"simple-git-hooks": {
-  "pre-commit": "eslint --fix \"**/*.js\""
-},
+  "simple-git-hooks": {
+    "pre-commit": "eslint --fix \"**/*.js\""
+  },
   "author": "MostOfLuck",
   "license": "ISC",
   "dependencies": {
