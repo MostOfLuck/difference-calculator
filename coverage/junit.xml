@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="8" failures="8" errors="0" time="0.501">
-  <testsuite name="undefined" errors="0" failures="8" skipped="0" timestamp="2023-11-29T19:48:15" time="0.441" tests="8">
-    <testcase classname=" CLI tool produces correct output with stylish format" name=" CLI tool produces correct output with stylish format" time="0.034">
+<testsuites name="jest tests" tests="8" failures="8" errors="0" time="0.647">
+  <testsuite name="undefined" errors="0" failures="8" skipped="0" timestamp="2023-11-29T20:03:47" time="0.6" tests="8">
+    <testcase classname=" CLI tool produces correct output with stylish format" name=" CLI tool produces correct output with stylish format" time="0.033">
       <failure>Error: Command failed: node /Users/samburtman/frontend-project-46/bin/cli.js file1.json file2.json -f stylish
 node:internal/modules/cjs/loader:1147
   throw err;
@@ -36,7 +36,7 @@ Node.js v21.2.0
     at runTestInternal (/Users/samburtman/frontend-project-46/node_modules/jest-runner/build/runTest.js:367:16)
     at runTest (/Users/samburtman/frontend-project-46/node_modules/jest-runner/build/runTest.js:444:34)</failure>
     </testcase>
-    <testcase classname=" CLI entry point exists and can be invoked" name=" CLI entry point exists and can be invoked" time="0.032">
+    <testcase classname=" CLI entry point exists and can be invoked" name=" CLI entry point exists and can be invoked" time="0.033">
       <failure>Error: Command failed: node /Users/samburtman/frontend-project-46/bin/cli.js --version
 node:internal/modules/cjs/loader:1147
   throw err;
@@ -2526,7 +2526,7 @@ Received: &quot;{
     at asyncGeneratorStep (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
     at processTicksAndRejections (node:internal/process/task_queues:95:5)</failure>
     </testcase>
-    <testcase classname=" Compare flat YAML files (plain format)" name=" Compare flat YAML files (plain format)" time="0.009">
+    <testcase classname=" Compare flat YAML files (plain format)" name=" Compare flat YAML files (plain format)" time="0.008">
       <failure>Error: expect(received).toBe(expected) // Object.is equality
 
 - Expected  -  6
