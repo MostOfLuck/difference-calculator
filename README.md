@@ -2,7 +2,7 @@
 [![Actions Status](https://github.com/MostOfLuck/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/MostOfLuck/frontend-project-46/actions)
 [![Build Status](https://github.com/MostOfLuck/frontend-project-46/actions/workflows/node.js.yml/badge.svg
 )](https://github.com/MostOfLuck/frontend-project-46/actions/workflows/node.js.yml)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/a8d6ee366154c48f5fab/test_coverage)](https://codeclimate.com/github/MostOfLuck/frontend-project-46/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/425d8c76e1328c1a3bcf/maintainability)](https://codeclimate.com/github/MostOfLuck/frontend-project-46/maintainability)
 
 <a href="https://codeclimate.com/github/MostOfLuck/frontend-project-46/maintainability"><img src="https://api.codeclimate.com/v1/badges/5d2f223b657ef254075f/maintainability" />
 
