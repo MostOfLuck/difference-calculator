@@ -1,0 +1,45 @@
+{
+  "common": {
+    "setting1": {
+      "type": "updated",
+      "value": {
+        "oldValue": "Value 1",
+        "newValue": "value1"
+      }
+    },
+    "setting2": {
+      "type": "added",
+      "value": 200
+    },
+    "setting3": {
+      "type": "removed",
+      "value": "complexValue"
+    },
+    "setting4": {
+      "type": "added",
+      "value": "blah blah"
+    },
+    "setting5": {
+      "type": "removed",
+      "value": {
+        "key": "value"
+      }
+    },
+    "setting6": {
+      "type": "nested",
+      "children": {
+        "doge": {
+          "type": "added",
+          "value": {
+            "ops": "vops"
+          }
+        },
+        "key": {
+          "type": "unchanged",
+          "value": "value"
+        }
+      }
+    }
+  }
+}
+
