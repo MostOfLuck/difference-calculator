@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="7" failures="7" errors="0" time="0.458">
+  <testsuite name="undefined" errors="0" failures="7" skipped="0" timestamp="2023-11-29T10:26:16" time="0.429" tests="7">
+    <testcase classname=" CLI tool produces correct output with stylish format" name=" CLI tool produces correct output with stylish format" time="0.053">
+      <failure>Error: Command failed: node /Users/samburtman/frontend-project-46/bin/cli.js file1.json file2.json -f stylish
+file:///Users/samburtman/frontend-project-46/formatters/stylishFormatter.js:8
+  const lines = data.map((item) =&gt; {
+                     ^
+
+TypeError: data.map is not a function
+    at formatStylish (file:///Users/samburtman/frontend-project-46/formatters/stylishFormatter.js:8:22)
+    at Command.&lt;anonymous&gt; (file:///Users/samburtman/frontend-project-46/formatters/index.js:45:20)
+    at Command.listener [as _actionHandler] (/Users/samburtman/frontend-project-46/node_modules/commander/lib/command.js:494:17)
+    at /Users/samburtman/frontend-project-46/node_modules/commander/lib/command.js:1296:65
+    at Command._chainOrCall (/Users/samburtman/frontend-project-46/node_modules/commander/lib/command.js:1193:12)
+    at Command._parseCommand (/Users/samburtman/frontend-project-46/node_modules/commander/lib/command.js:1296:27)
+    at Command.parse (/Users/samburtman/frontend-project-46/node_modules/commander/lib/command.js:910:10)
+    at file:///Users/samburtman/frontend-project-46/formatters/index.js:53:9
+    at ModuleJob.run (node:internal/modules/esm/module_job:218:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:329:24)
+
+Node.js v21.1.0
+
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at Object.&lt;anonymous&gt; (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:13:26)
+    at Promise.then.completed (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:126:9)
+    at run (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/Users/samburtman/frontend-project-46/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/Users/samburtman/frontend-project-46/node_modules/jest-runner/build/runTest.js:444:34)</failure>
+    </testcase>
+    <testcase classname=" Compare flat JSON files (stylish format)" name=" Compare flat JSON files (stylish format)" time="0.001">
+      <failure>Error: ENOENT: no such file or directory, open &apos;/Users/samburtman/frontend-project-46/__tests__/__fixtures__/expected_stylish.txt&apos;
+    at readFileSync (node:fs:453:20)
+    at _callee$ (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:18:38)
+    at call (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at Generator.tryCatch (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at Generator._invoke [as next] (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at asyncGeneratorStep (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at asyncGeneratorStep (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at _next (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at new Promise (&lt;anonymous&gt;)
+    at Object.&lt;anonymous&gt; (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at Promise.then.completed (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:126:9)
+    at run (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/Users/samburtman/frontend-project-46/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/Users/samburtman/frontend-project-46/node_modules/jest-runner/build/runTest.js:444:34)</failure>
+    </testcase>
+    <testcase classname=" Compare flat JSON files (plain format)" name=" Compare flat JSON files (plain format)" time="0">
+      <failure>Error: ENOENT: no such file or directory, open &apos;/Users/samburtman/frontend-project-46/__tests__/__fixtures__/expected_plain.txt&apos;
+    at readFileSync (node:fs:453:20)
+    at _callee2$ (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:26:38)
+    at call (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at Generator.tryCatch (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at Generator._invoke [as next] (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at asyncGeneratorStep (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at asyncGeneratorStep (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at _next (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at new Promise (&lt;anonymous&gt;)
+    at Object.&lt;anonymous&gt; (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at Promise.then.completed (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:126:9)
+    at run (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/Users/samburtman/frontend-project-46/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/Users/samburtman/frontend-project-46/node_modules/jest-runner/build/runTest.js:444:34)</failure>
+    </testcase>
+    <testcase classname=" Compare flat JSON (json format)" name=" Compare flat JSON (json format)" time="0">
+      <failure>Error: ENOENT: no such file or directory, open &apos;/Users/samburtman/frontend-project-46/__tests__/__fixtures__/expected_json.json&apos;
+    at readFileSync (node:fs:453:20)
+    at _callee3$ (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:34:49)
+    at call (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at Generator.tryCatch (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at Generator._invoke [as next] (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at asyncGeneratorStep (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at asyncGeneratorStep (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at _next (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at new Promise (&lt;anonymous&gt;)
+    at Object.&lt;anonymous&gt; (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at Promise.then.completed (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:126:9)
+    at run (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/Users/samburtman/frontend-project-46/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/Users/samburtman/frontend-project-46/node_modules/jest-runner/build/runTest.js:444:34)</failure>
+    </testcase>
+    <testcase classname=" Compare flat YAML files (stylish format)" name=" Compare flat YAML files (stylish format)" time="0">
+      <failure>Error: ENOENT: no such file or directory, open &apos;/Users/samburtman/frontend-project-46/__tests__/__fixtures__/expected_stylish.txt&apos;
+    at readFileSync (node:fs:453:20)
+    at _callee4$ (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:42:38)
+    at call (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at Generator.tryCatch (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at Generator._invoke [as next] (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at asyncGeneratorStep (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at asyncGeneratorStep (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at _next (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at new Promise (&lt;anonymous&gt;)
+    at Object.&lt;anonymous&gt; (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at Promise.then.completed (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:126:9)
+    at run (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/Users/samburtman/frontend-project-46/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/Users/samburtman/frontend-project-46/node_modules/jest-runner/build/runTest.js:444:34)</failure>
+    </testcase>
+    <testcase classname=" Compare flat YAML files (plain format)" name=" Compare flat YAML files (plain format)" time="0">
+      <failure>Error: ENOENT: no such file or directory, open &apos;/Users/samburtman/frontend-project-46/__tests__/__fixtures__/expected_plain.txt&apos;
+    at readFileSync (node:fs:453:20)
+    at _callee5$ (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:50:38)
+    at call (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at Generator.tryCatch (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at Generator._invoke [as next] (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at asyncGeneratorStep (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at asyncGeneratorStep (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at _next (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at new Promise (&lt;anonymous&gt;)
+    at Object.&lt;anonymous&gt; (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at Promise.then.completed (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:126:9)
+    at run (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/Users/samburtman/frontend-project-46/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/Users/samburtman/frontend-project-46/node_modules/jest-runner/build/runTest.js:444:34)</failure>
+    </testcase>
+    <testcase classname=" Compare flat YAML files (json format)" name=" Compare flat YAML files (json format)" time="0">
+      <failure>Error: ENOENT: no such file or directory, open &apos;/Users/samburtman/frontend-project-46/__tests__/__fixtures__/expected_json.json&apos;
+    at readFileSync (node:fs:453:20)
+    at _callee6$ (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:58:49)
+    at call (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at Generator.tryCatch (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at Generator._invoke [as next] (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at asyncGeneratorStep (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at asyncGeneratorStep (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at _next (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at new Promise (&lt;anonymous&gt;)
+    at Object.&lt;anonymous&gt; (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
+    at Promise.then.completed (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:126:9)
+    at run (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/Users/samburtman/frontend-project-46/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/Users/samburtman/frontend-project-46/node_modules/jest-runner/build/runTest.js:444:34)</failure>
+    </testcase>
+  </testsuite>
+</testsuites>
