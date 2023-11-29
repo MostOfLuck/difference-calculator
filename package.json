@@ -26,8 +26,8 @@
     ]
   },
   "scripts": {
-    "help": "node bin/cli.js -h",
-    "test": "jest",
+    "help": "node index.js -h",
+    "test": "jest --no-colors",
     "lint": "eslint --fix \"**/*.js\""
   },
   "simple-git-hooks": {

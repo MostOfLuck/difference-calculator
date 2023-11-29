@@ -1,77 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="8" failures="8" errors="0" time="0.647">
-  <testsuite name="undefined" errors="0" failures="8" skipped="0" timestamp="2023-11-29T20:03:47" time="0.6" tests="8">
-    <testcase classname=" CLI tool produces correct output with stylish format" name=" CLI tool produces correct output with stylish format" time="0.033">
-      <failure>Error: Command failed: node /Users/samburtman/frontend-project-46/bin/cli.js file1.json file2.json -f stylish
-node:internal/modules/cjs/loader:1147
-  throw err;
-  ^
-
-Error: Cannot find module &apos;/Users/samburtman/frontend-project-46/bin/cli.js&apos;
-    at Module._resolveFilename (node:internal/modules/cjs/loader:1144:15)
-    at Module._load (node:internal/modules/cjs/loader:985:27)
-    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
-    at node:internal/main/run_main_module:28:49 {
-  code: &apos;MODULE_NOT_FOUND&apos;,
-  requireStack: []
-}
-
-Node.js v21.2.0
-
-    at genericNodeError (node:internal/errors:956:15)
-    at wrappedFn (node:internal/errors:510:14)
-    at checkExecSyncError (node:child_process:890:11)
-    at execSync (node:child_process:962:15)
-    at Object.&lt;anonymous&gt; (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:13:26)
-    at Promise.then.completed (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/utils.js:298:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/utils.js:231:10)
-    at _callCircusTest (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:316:40)
-    at processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at _runTest (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:252:3)
-    at _runTestsForDescribeBlock (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:126:9)
-    at run (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:71:3)
-    at runAndTransformResultsToJestFormat (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
-    at jestAdapter (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
-    at runTestInternal (/Users/samburtman/frontend-project-46/node_modules/jest-runner/build/runTest.js:367:16)
-    at runTest (/Users/samburtman/frontend-project-46/node_modules/jest-runner/build/runTest.js:444:34)</failure>
-    </testcase>
-    <testcase classname=" CLI entry point exists and can be invoked" name=" CLI entry point exists and can be invoked" time="0.033">
-      <failure>Error: Command failed: node /Users/samburtman/frontend-project-46/bin/cli.js --version
-node:internal/modules/cjs/loader:1147
-  throw err;
-  ^
-
-Error: Cannot find module &apos;/Users/samburtman/frontend-project-46/bin/cli.js&apos;
-    at Module._resolveFilename (node:internal/modules/cjs/loader:1144:15)
-    at Module._load (node:internal/modules/cjs/loader:985:27)
-    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
-    at node:internal/main/run_main_module:28:49 {
-  code: &apos;MODULE_NOT_FOUND&apos;,
-  requireStack: []
-}
-
-Node.js v21.2.0
-
-    at genericNodeError (node:internal/errors:956:15)
-    at wrappedFn (node:internal/errors:510:14)
-    at checkExecSyncError (node:child_process:890:11)
-    at execSync (node:child_process:962:15)
-    at Object.&lt;anonymous&gt; (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:19:26)
-    at Promise.then.completed (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/utils.js:298:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/utils.js:231:10)
-    at _callCircusTest (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:316:40)
-    at processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at _runTest (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:252:3)
-    at _runTestsForDescribeBlock (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:126:9)
-    at run (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/run.js:71:3)
-    at runAndTransformResultsToJestFormat (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
-    at jestAdapter (/Users/samburtman/frontend-project-46/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
-    at runTestInternal (/Users/samburtman/frontend-project-46/node_modules/jest-runner/build/runTest.js:367:16)
-    at runTest (/Users/samburtman/frontend-project-46/node_modules/jest-runner/build/runTest.js:444:34)</failure>
-    </testcase>
-    <testcase classname=" Compare flat JSON files (stylish format)" name=" Compare flat JSON files (stylish format)" time="0.033">
+<testsuites name="jest tests" tests="6" failures="6" errors="0" time="0.383">
+  <testsuite name="undefined" errors="0" failures="6" skipped="0" timestamp="2023-11-29T20:37:19" time="0.338" tests="6">
+    <testcase classname=" Compare flat JSON files (stylish format)" name=" Compare flat JSON files (stylish format)" time="0.032">
       <failure>Error: expect(received).toBe(expected) // Object.is equality
 
 - Expected  -  18
@@ -866,7 +796,7 @@ Node.js v21.2.0
 +
 + + 347: &quot;
 + }
-    at toBe (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:28:16)
+    at toBe (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:14:16)
     at call (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
     at Generator.tryCatch (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
     at Generator._invoke [as next] (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
@@ -874,7 +804,7 @@ Node.js v21.2.0
     at asyncGeneratorStep (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
     at processTicksAndRejections (node:internal/process/task_queues:95:5)</failure>
     </testcase>
-    <testcase classname=" Compare flat JSON files (plain format)" name=" Compare flat JSON files (plain format)" time="0.049">
+    <testcase classname=" Compare flat JSON files (plain format)" name=" Compare flat JSON files (plain format)" time="0.045">
       <failure>Error: expect(received).toBe(expected) // Object.is equality
 
 - Expected  -   6
@@ -1657,7 +1587,7 @@ Node.js v21.2.0
 +
 + + 347: &quot;
 + }
-    at toBe (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:36:16)
+    at toBe (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:22:16)
     at call (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
     at Generator.tryCatch (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
     at Generator._invoke [as next] (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
@@ -1665,7 +1595,7 @@ Node.js v21.2.0
     at asyncGeneratorStep (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
     at processTicksAndRejections (node:internal/process/task_queues:95:5)</failure>
     </testcase>
-    <testcase classname=" Compare flat JSON (json format)" name=" Compare flat JSON (json format)" time="0.003">
+    <testcase classname=" Compare flat JSON (json format)" name=" Compare flat JSON (json format)" time="0.002">
       <failure>Error: expect(received).toEqual(expected) // deep equality
 
 Expected: {&quot;common&quot;: {&quot;setting1&quot;: {&quot;type&quot;: &quot;updated&quot;, &quot;value&quot;: {&quot;newValue&quot;: &quot;value1&quot;, &quot;oldValue&quot;: &quot;Value 1&quot;}}, &quot;setting2&quot;: {&quot;type&quot;: &quot;added&quot;, &quot;value&quot;: 200}, &quot;setting3&quot;: {&quot;type&quot;: &quot;removed&quot;, &quot;value&quot;: &quot;complexValue&quot;}, &quot;setting4&quot;: {&quot;type&quot;: &quot;added&quot;, &quot;value&quot;: &quot;blah blah&quot;}, &quot;setting5&quot;: {&quot;type&quot;: &quot;removed&quot;, &quot;value&quot;: {&quot;key&quot;: &quot;value&quot;}}, &quot;setting6&quot;: {&quot;children&quot;: {&quot;doge&quot;: {&quot;type&quot;: &quot;added&quot;, &quot;value&quot;: {&quot;ops&quot;: &quot;vops&quot;}}, &quot;key&quot;: {&quot;type&quot;: &quot;unchanged&quot;, &quot;value&quot;: &quot;value&quot;}}, &quot;type&quot;: &quot;nested&quot;}}}
@@ -2387,7 +2317,7 @@ Received: &quot;{
 - 347:··
 + 347: \&quot;
 }&quot;
-    at toEqual (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:44:16)
+    at toEqual (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:30:16)
     at call (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
     at Generator.tryCatch (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
     at Generator._invoke [as next] (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
@@ -2518,7 +2448,7 @@ Received: &quot;{
 + + 26: 
 +
 + }
-    at toBe (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:52:16)
+    at toBe (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:38:16)
     at call (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
     at Generator.tryCatch (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
     at Generator._invoke [as next] (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
@@ -2637,7 +2567,7 @@ Received: &quot;{
 + + 26: 
 
 + }
-    at toBe (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:60:16)
+    at toBe (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:46:16)
     at call (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
     at Generator.tryCatch (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
     at Generator._invoke [as next] (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
@@ -2645,7 +2575,7 @@ Received: &quot;{
     at asyncGeneratorStep (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
     at processTicksAndRejections (node:internal/process/task_queues:95:5)</failure>
     </testcase>
-    <testcase classname=" Compare flat YAML files (json format)" name=" Compare flat YAML files (json format)" time="0">
+    <testcase classname=" Compare flat YAML files (json format)" name=" Compare flat YAML files (json format)" time="0.001">
       <failure>Error: expect(received).toEqual(expected) // deep equality
 
 Expected: {&quot;common&quot;: {&quot;setting1&quot;: {&quot;type&quot;: &quot;updated&quot;, &quot;value&quot;: {&quot;newValue&quot;: &quot;value1&quot;, &quot;oldValue&quot;: &quot;Value 1&quot;}}, &quot;setting2&quot;: {&quot;type&quot;: &quot;added&quot;, &quot;value&quot;: 200}, &quot;setting3&quot;: {&quot;type&quot;: &quot;removed&quot;, &quot;value&quot;: &quot;complexValue&quot;}, &quot;setting4&quot;: {&quot;type&quot;: &quot;added&quot;, &quot;value&quot;: &quot;blah blah&quot;}, &quot;setting5&quot;: {&quot;type&quot;: &quot;removed&quot;, &quot;value&quot;: {&quot;key&quot;: &quot;value&quot;}}, &quot;setting6&quot;: {&quot;children&quot;: {&quot;doge&quot;: {&quot;type&quot;: &quot;added&quot;, &quot;value&quot;: {&quot;ops&quot;: &quot;vops&quot;}}, &quot;key&quot;: {&quot;type&quot;: &quot;unchanged&quot;, &quot;value&quot;: &quot;value&quot;}}, &quot;type&quot;: &quot;nested&quot;}}}
@@ -2740,7 +2670,7 @@ Received: &quot;{
 - 26: .
 + 26:··
 }&quot;
-    at toEqual (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:68:16)
+    at toEqual (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:54:16)
     at call (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
     at Generator.tryCatch (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
     at Generator._invoke [as next] (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
