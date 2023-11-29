@@ -14,6 +14,12 @@ test('CLI tool produces correct output with stylish format', () => {
   expect(result).toContain('expected output');
 });
 
+test('CLI entry point exists and can be invoked', () => {
+  const entryPoint = path.resolve(__dirname, '..', 'bin', 'cli.js');
+  const result = execSync(`node ${entryPoint} --version`).toString();
+  expect(result).toContain();
+});
+
 test('Compare flat JSON files (stylish format)', async () => {
   const expected = await readFileSync(getFixturePath('expected_stylish.txt'), 'utf-8');
   const data1 = await readFileSync(getFixturePath('file1.json'), 'utf-8');
