@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1701338246688" clover="3.2.0">
-  <project timestamp="1701338246688" name="All files">
+<coverage generated="1701338565576" clover="3.2.0">
+  <project timestamp="1701338565576" name="All files">
     <metrics statements="29" coveredstatements="18" conditionals="11" coveredconditionals="6" methods="11" coveredmethods="8" elements="51" coveredelements="32" complexity="0" loc="29" ncloc="29" packages="1" files="1" classes="1"/>
     <file name="gendiff.js" path="/Users/samburtman/frontend-project-46/src/gendiff.js">
       <metrics statements="29" coveredstatements="18" conditionals="11" coveredconditionals="6" methods="11" coveredmethods="8"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="6" failures="6" errors="0" time="0.406">
-  <testsuite name="undefined" errors="0" failures="6" skipped="0" timestamp="2023-11-30T09:57:26" time="0.348" tests="6">
-    <testcase classname=" Compare flat JSON files (stylish format)" name=" Compare flat JSON files (stylish format)" time="0.033">
+<testsuites name="jest tests" tests="6" failures="6" errors="0" time="0.41">
+  <testsuite name="undefined" errors="0" failures="6" skipped="0" timestamp="2023-11-30T10:00:53" time="0.346" tests="6">
+    <testcase classname=" Compare flat JSON files (stylish format)" name=" Compare flat JSON files (stylish format)" time="0.034">
       <failure>Error: expect(received).toBe(expected) // Object.is equality
 
 - Expected  -  18
@@ -2456,7 +2456,7 @@ Received: &quot;{
     at asyncGeneratorStep (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
     at processTicksAndRejections (node:internal/process/task_queues:95:5)</failure>
     </testcase>
-    <testcase classname=" Compare flat YAML files (plain format)" name=" Compare flat YAML files (plain format)" time="0.008">
+    <testcase classname=" Compare flat YAML files (plain format)" name=" Compare flat YAML files (plain format)" time="0.009">
       <failure>Error: expect(received).toBe(expected) // Object.is equality
 
 - Expected  -  6
@@ -2575,7 +2575,7 @@ Received: &quot;{
     at asyncGeneratorStep (/Users/samburtman/frontend-project-46/__tests__/gendiff.test.js:2:1)
     at processTicksAndRejections (node:internal/process/task_queues:95:5)</failure>
     </testcase>
-    <testcase classname=" Compare flat YAML files (json format)" name=" Compare flat YAML files (json format)" time="0.004">
+    <testcase classname=" Compare flat YAML files (json format)" name=" Compare flat YAML files (json format)" time="0">
       <failure>Error: expect(received).toEqual(expected) // deep equality
 
 Expected: {&quot;common&quot;: {&quot;setting1&quot;: {&quot;type&quot;: &quot;updated&quot;, &quot;value&quot;: {&quot;newValue&quot;: &quot;value1&quot;, &quot;oldValue&quot;: &quot;Value 1&quot;}}, &quot;setting2&quot;: {&quot;type&quot;: &quot;added&quot;, &quot;value&quot;: 200}, &quot;setting3&quot;: {&quot;type&quot;: &quot;removed&quot;, &quot;value&quot;: &quot;complexValue&quot;}, &quot;setting4&quot;: {&quot;type&quot;: &quot;added&quot;, &quot;value&quot;: &quot;blah blah&quot;}, &quot;setting5&quot;: {&quot;type&quot;: &quot;removed&quot;, &quot;value&quot;: {&quot;key&quot;: &quot;value&quot;}}, &quot;setting6&quot;: {&quot;children&quot;: {&quot;doge&quot;: {&quot;type&quot;: &quot;added&quot;, &quot;value&quot;: {&quot;ops&quot;: &quot;vops&quot;}}, &quot;key&quot;: {&quot;type&quot;: &quot;unchanged&quot;, &quot;value&quot;: &quot;value&quot;}}, &quot;type&quot;: &quot;nested&quot;}}}
