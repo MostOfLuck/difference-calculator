@@ -8,7 +8,7 @@
   },
   "scripts": {
     "help": "node index.js -h",
-    "test": "jest --silent",
+    "test": "jest --runInBand --bail",
     "lint": "eslint --fix \"**/*.js\""
   },
   "simple-git-hooks": {
