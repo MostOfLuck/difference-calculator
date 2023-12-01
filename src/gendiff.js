@@ -32,28 +32,27 @@ export function generateDiff(data1, data2, depth = 1) {
   const removedKeys = keys1.filter((key) => !keys2.includes(key));
   const commonKeys = keys1.filter((key) => keys2.includes(key));
 
+  const generateLine = (prefix, key, value) => `${'  '.repeat(depth)}${prefix} ${key}: ${formatValue(value, depth)}`;
+
   const diff = commonKeys.map((key) => {
     const value1 = data1[key];
     const value2 = data2[key];
 
     if (typeof value1 === 'object' && typeof value2 === 'object') {
       const nestedDiff = generateDiff(value1, value2, depth + 1);
-      return `    ${'  '.repeat(depth)}${key}: ${nestedDiff}`;
+      return generateLine('', key, nestedDiff);
     }
 
     if (value1 === value2) {
-      return `    ${'  '.repeat(depth)}${key}: ${value1}`;
+      return generateLine('', key, value1);
     }
 
-    return [
-      `${'  '.repeat(depth)}- ${key}: ${value1}`,
-      `${'  '.repeat(depth)}+ ${key}: ${value2}`,
-    ].join('\n');
+    return [generateLine('-', key, value1), generateLine('+', key, value2)].join('\n');
   });
 
   const result = [
-    ...addedKeys.map((key) => `  + ${'  '.repeat(depth)}${key}: ${formatValue(data2[key], depth)}`),
-    ...removedKeys.map((key) => `  - ${'  '.repeat(depth)}${key}: ${formatValue(data1[key], depth)}`),
+    ...addedKeys.map((key) => generateLine('+', key, data2[key])),
+    ...removedKeys.map((key) => generateLine('-', key, data1[key])),
     ...diff,
   ];
 
