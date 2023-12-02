@@ -15,8 +15,8 @@ program
   .allowUnknownOption()
   .action((filepath1, filepath2) => {
     const fixturesPath = path.resolve(process.cwd(), '__tests__/__fixtures__');
-    const fullPath1 = path.join(fixturesPath, filepath1);
-    const fullPath2 = path.join(fixturesPath, filepath2);
+    const fullPath1 = path.join(fixturesPath, ...filepath1.split('/').filter((arg) => !arg.startsWith('--')));
+    const fullPath2 = path.join(fixturesPath, ...filepath2.split('/').filter((arg) => !arg.startsWith('--')));
 
     let data1;
     let data2;
