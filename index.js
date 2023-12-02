@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
 import path from 'path';
-import { parseYamlFile, generateDiff, parseJsonFile } from './src/gendiff.js';
-import generatePlainDiff from './formatters/plainFormatter.js';
+import {
+  parseYamlFile, generateDiff, parseJsonFile, generatePlainDiff,
+} from './src/gendiff.js';
 import formatStylish from './formatters/stylishFormatter.js';
 
 const program = new Command();
