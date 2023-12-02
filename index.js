@@ -12,6 +12,7 @@ program
   .description('Compares two configuration files and shows a difference.')
   .arguments('<filepath1> <filepath2>')
   .option('-f, --format <type>', 'output format (json, plain)')
+  .allowUnknownOption()
   .action((filepath1, filepath2) => {
     const fixturesPath = path.resolve(process.cwd(), '__tests__/__fixtures__');
     const fullPath1 = path.join(fixturesPath, filepath1);
