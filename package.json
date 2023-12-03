@@ -10,7 +10,8 @@
   "scripts": {
     "help": "node src/gendiff.js -h",
     "test": "jest --color --runInBand --bail",
-    "simple-git-hooks": "simple-git-hooks"
+    "simple-git-hooks": "simple-git-hooks",
+    "build": "build"
   },
   "author": "",
   "license": "ISC",
