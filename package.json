@@ -9,7 +9,7 @@
   },
   "scripts": {
     "help": "node src/gendiff.js -h",
-    "test": "env-cmd -f .env jest",
+    "test": "jest --color --runInBand --bail",
     "simple-git-hooks": "simple-git-hooks"
   },
   "author": "",
