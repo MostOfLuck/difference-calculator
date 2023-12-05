@@ -1,18 +1,38 @@
-// __tests__/gendiff.test.js
-import { readFileSync } from 'fs';
+import { test, expect } from '@jest/globals';
 import path from 'path';
-import { generateDiff } from '../src/gendiff.js';
+import fs from 'fs';
+import { fileURLToPath } from 'url';
+import getDiff from '../src/getdiff.js';
 
-const baseDir = process.cwd();
-const getFixturePath = (filename) => path.join(baseDir, '__tests__/__fixtures__', filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
-test('Compare flat YAML files (stylish format)', async () => {
-  const expected = await readFileSync(getFixturePath('expected_stylish.txt'), 'utf-8');
-  const data1 = await readFileSync(getFixturePath('file1.yml'), 'utf-8');
-  const data2 = await readFileSync(getFixturePath('file2.yml'), 'utf-8');
-  const diff = generateDiff(data1, data2, 'stylish');
+const resultExpected = (fileName) => fs.readFileSync(getFixturePath(fileName), 'utf-8').trim();
 
-  console.log('Generated Diff:', diff);
-  console.log('Expected Diff:', expected);
-  expect(diff).toMatch(/^{\n(.+|\n)+\n}$/);
+test.each([
+  {
+    file1: 'file1.json', file2: 'file2.json', format: undefined, expected: 'expected_stylish.txt',
+  },
+  {
+    file1: 'file1.json', file2: 'file2.json', format: 'plain', expected: 'expected_plain.txt',
+  },
+  {
+    file1: 'file1.json', file2: 'file2.json', format: 'json', expected: 'expected_json.json',
+  },
+  {
+    file1: 'file1.yml', file2: 'file2.yml', format: undefined, expected: 'expected_stylish.txt',
+  },
+  {
+    file1: 'file1.yml', file2: 'file2.yml', format: 'plain', expected: 'expected_plain.txt',
+  },
+  {
+    file1: 'file1.yml', file2: 'file2.yml', format: 'json', expected: 'expected_json.json',
+  },
+
+])('compare', ({
+  file1, file2, format, expected,
+}) => {
+  expect(getDiff(getFixturePath(file1), getFixturePath(file2), format))
+    .toBe(resultExpected(expected));
 });
