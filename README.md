@@ -37,7 +37,7 @@ Gendiff is a utility designed to identify discrepancies between two data structu
 `json` - Outputs the differences in a JSON format, suitable for machine-readable information.
 
 
-Parcing json
+Compare json
 --------------------------  
  You can parcel json files like this:
  ```bash
@@ -46,7 +46,7 @@ $  gendiff file1.json file2.json
 
  Demonstration: <a href="https://asciinema.org/a/611315" target="_blank"><img src="https://asciinema.org/a/602271.svg" /></a>
 
-Parcing yml
+Compare yml
 --------------------------  
  You can parcel yml files like this:
  ```bash
