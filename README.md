@@ -1,3 +1,8 @@
+Compares two configuration files and shows a difference
+---------------------------------------------------------
+
+
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/MostOfLuck/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/MostOfLuck/frontend-project-46/actions)
 [![Build Status](https://github.com/MostOfLuck/frontend-project-46/actions/workflows/node.js.yml/badge.svg
