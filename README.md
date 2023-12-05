@@ -27,6 +27,14 @@ Compares two configuration files and shows a difference
 
    
 
+### Description ###
+Gendiff is a tool designed to identify discrepancies between two data structures. The utility seamlessly handles both JSON and YAML/YML files. The default output format for the differences is 'stylish.' If you desire an alternative output format, simply use the -f or --format flag with one of the following options:
+
+stylish (default) - Provides a clear and visually appealing difference output.
+
+plain - Presents the differences in a line-by-line format for easy comparison.
+
+json - Outputs the differences in a JSON format, suitable for machine-readable information.
 Parcing json
 --------------------------  
  You can parcel json files like this:
