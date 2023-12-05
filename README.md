@@ -8,7 +8,7 @@ Compares two configuration files and shows a difference
 [![Build Status](https://github.com/MostOfLuck/frontend-project-46/actions/workflows/node.js.yml/badge.svg
 )](https://github.com/MostOfLuck/frontend-project-46/actions/workflows/node.js.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/425d8c76e1328c1a3bcf/maintainability)](https://codeclimate.com/github/MostOfLuck/frontend-project-46/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/02e2647289b6d84eb57b20d406fd3964ac34da66f7abce495cb3279415b0c407/test_coverage)](https://codeclimate.com/github/MostOfLuck/frontend-project-46/test_coverage)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a495cb3279415b0c407/test_coverage)](https://codeclimate.com/github/MostOfLuck/frontend-project-46/test_coverage)
 
 
    
