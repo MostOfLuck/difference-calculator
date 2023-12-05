@@ -28,7 +28,7 @@ Compares two configuration files and shows a difference
    
 ### Description ### 
 
-Gendiff - is a utility that determines the difference between two data structures. Utility can work with json and yaml/yml files. By default using 'stylish' output format of difference. For another output format, use the flag `-f` or `--format` with next values:
+Gendiff is a tool designed to identify discrepancies between two data structures. The utility seamlessly handles both JSON and YAML/YML files. The default output format for the differences is 'stylish.' If you desire an alternative output format, simply use the '-f' or '--format' flag with one of the following options:
 
 `stylish` - using by default
 
