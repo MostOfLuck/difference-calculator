@@ -12,7 +12,20 @@ Compares two configuration files and shows a difference
 
 
    
+### Install ###
 
+1. Clone repository local
+`git clone git@github.com:MostOfLuck/frontend-project-46.git`
+2. Install all dependencies 
+`npm install`
+3. Install  apps global
+`npm link`
+4. Run app with command:
+`gendiff <filepath1>filename1.json <filepath2>filename2.yaml`
+
+    where `<filepath>` - absolute or relative file path
+
+   
 
 Parcing json
 --------------------------  
