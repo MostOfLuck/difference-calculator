@@ -1,7 +1,0 @@
-Property 'common.setting1' was updated. From 'Value 1' to 'value1'
-Property 'common.setting2' was added with value: 200
-Property 'common.setting3' was removed
-Property 'common.setting5' was removed
-Property 'common.setting4' was added with value: 'blah blah'
-Property 'common.setting6.doge.ops' was added with value: 'vops'
-
