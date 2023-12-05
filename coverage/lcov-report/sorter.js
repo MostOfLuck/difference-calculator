@@ -27,21 +27,22 @@ var addSorting = (function () {
   function onFilterInput() {
       const searchValue = document.getElementById('fileSearch').value;
       const rows = getTableBody().children;
-      for (let i = 0; i < rows.length; i++) {
-          const row = rows[i];
-          row.style.display = row.textContent.toLowerCase().includes(searchValue.toLowerCase()) ? '' : 'none';
-      }
+
+      Array.from(rows).forEach(row => {
+          const displayStyle = row.textContent.toLowerCase().includes(searchValue.toLowerCase()) ? '' : 'none';
+          row.style.display = displayStyle;
+      });
   }
 
   function addSearchBox() {
-      var template = document.getElementById('filterTemplate');
-      var templateClone = template.content.cloneNode(true);
+      const template = document.getElementById('filterTemplate');
+      const templateClone = template.content.cloneNode(true);
       templateClone.getElementById('fileSearch').oninput = onFilterInput;
       template.parentElement.appendChild(templateClone);
   }
 
   function loadColumns() {
-      var colNodes = getTableHeader().querySelectorAll('th');
+      const colNodes = getTableHeader().querySelectorAll('th');
       return Array.from(colNodes).map(colNode => ({
           key: colNode.getAttribute('data-col'),
           sortable: !colNode.getAttribute('data-nosort'),
@@ -50,7 +51,7 @@ var addSorting = (function () {
   }
 
   function loadRowData(tableRow) {
-      var tableCols = tableRow.querySelectorAll('td');
+      const tableCols = tableRow.querySelectorAll('td');
       return Array.from(tableCols).reduce((data, colNode, i) => {
           const col = cols[i];
           const val = colNode.getAttribute('data-value');
@@ -60,18 +61,18 @@ var addSorting = (function () {
   }
 
   function loadData() {
-      var rows = getTableBody().querySelectorAll('tr');
+      const rows = getTableBody().querySelectorAll('tr');
       Array.from(rows).forEach(row => (row.data = loadRowData(row)));
   }
 
   function sortByIndex(index, desc) {
-      var key = cols[index].key;
-      var sorter = (a, b) => (a.data[key] < b.data[key] ? -1 : a.data[key] > b.data[key] ? 1 : 0);
-      var finalSorter = desc ? (a, b) => -1 * sorter(a, b) : sorter;
+      const key = cols[index].key;
+      const sorter = (a, b) => (a.data[key] < b.data[key] ? -1 : a.data[key] > b.data[key] ? 1 : 0);
+      const finalSorter = desc ? (a, b) => -1 * sorter(a, b) : sorter;
 
-      var tableBody = getTableBody();
-      var rowNodes = tableBody.querySelectorAll('tr');
-      var rows = Array.from(rowNodes);
+      const tableBody = getTableBody();
+      const rowNodes = tableBody.querySelectorAll('tr');
+      const rows = Array.from(rowNodes);
 
       rows.sort(finalSorter);
 
@@ -79,7 +80,7 @@ var addSorting = (function () {
   }
 
   function removeSortIndicators() {
-      var col = getNthColumn(currentSort.index);
+      const col = getNthColumn(currentSort.index);
       col.className = col.className.replace(/ sorted$/, '').replace(/ sorted-desc$/, '');
   }
 
@@ -88,24 +89,23 @@ var addSorting = (function () {
   }
 
   function enableUI() {
-      for (var i = 0; i < cols.length; i++) {
-          if (cols[i].sortable) {
-              var el = getNthColumn(i).querySelector('.sorter').parentElement;
-              el.addEventListener('click', (function (index) {
-                  return function () {
-                      var desc = cols[index].defaultDescSort;
-                      if (currentSort.index === index) {
-                          desc = !currentSort.desc;
-                      }
-                      sortByIndex(index, desc);
-                      removeSortIndicators();
-                      currentSort.index = index;
+      cols.forEach((col, i) => {
+          if (col.sortable) {
+              const el = getNthColumn(i).querySelector('.sorter').parentElement;
+              el.addEventListener('click', () => {
+                  const desc = col.defaultDescSort;
+                  if (currentSort.index === i) {
+                      currentSort.desc = !currentSort.desc;
+                  } else {
+                      currentSort.index = i;
                       currentSort.desc = desc;
-                      addSortIndicators();
-                  };
-              })(i));
+                  }
+                  sortByIndex(i, currentSort.desc);
+                  removeSortIndicators();
+                  addSortIndicators();
+              });
           }
-      }
+      });
   }
 
   return function () {
