@@ -12,7 +12,8 @@ Compares two configuration files and shows a difference
 
 
    
-### Install ###
+Install
+-------------------
 
 1. Clone repository local
 `git clone git@github.com:MostOfLuck/frontend-project-46.git`
@@ -26,7 +27,8 @@ Compares two configuration files and shows a difference
     where `<filepath>` - absolute or relative file path
 
    
-### Description ### 
+Description
+-------------------
 
 Gendiff is a utility designed to identify discrepancies between two data structures. The tool seamlessly handles both JSON and YAML/YML files. The default output format for the differences is 'stylish.' If you desire an alternative output format, simply use the `-f` or `--format` flag with one of the following options:
 
