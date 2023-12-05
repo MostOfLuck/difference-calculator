@@ -74,3 +74,7 @@ $  gendiff file1.yml file2.yml -f plain
 ```
 
 Demonstration: <a href="https://asciinema.org/a/625189" target="_blank"><img src="https://asciinema.org/a/602271.svg" /></a>
+
+## Developers
+
+[MostOfLuck](https://github.com/MostOfLuck) 💪
