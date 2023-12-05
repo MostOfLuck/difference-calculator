@@ -1,23 +1,16 @@
-install: install-deps
-	npx simple-git-hooks
+install:
+        npm ci
 
-run:
-	bin/nodejs-package.js 10
-
-install-deps:
-	npm ci
-
-test:
-	npm link
-
-
-test-coverage:
-	npm test -- --coverage --coverageProvider=v8
+gendiff:
+        node bin/gendiff.js
 
 lint:
-	npx eslint .
+        npx eslint .
 
-publish:
-	npm publish
+test:
+        npx jest
 
-.PHONY: test
+test-coverage:
+        npm test -- --coverage --coverageProvider=v8
+~
+
