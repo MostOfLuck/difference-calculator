@@ -4,8 +4,6 @@
 )](https://github.com/MostOfLuck/frontend-project-46/actions/workflows/node.js.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/425d8c76e1328c1a3bcf/maintainability)](https://codeclimate.com/github/MostOfLuck/frontend-project-46/maintainability)
 
-<a href="https://codeclimate.com/github/MostOfLuck/frontend-project-46/maintainability"><img src="https://api.codeclimate.com/v1/badges/5d2f223b657ef254075f/maintainability" />
-
    
 
 
