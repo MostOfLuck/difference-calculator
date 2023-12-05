@@ -64,3 +64,13 @@ $  gendiff file1.json file2.yml
 ```
 
  Demonstration: <a href="https://asciinema.org/a/611644" target="_blank"><img src="https://asciinema.org/a/602271.svg" /></a>
+
+
+Comparison with format plain
+-----------------------------
+ You can compare files in plain format like this:
+ ```bash
+$  gendiff file1.yml file2.yml -f plain
+```
+
+Demonstration: <a href="https://asciinema.org/a/625189" target="_blank"><img src="https://asciinema.org/a/602271.svg" /></a>
