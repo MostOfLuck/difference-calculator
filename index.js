@@ -1,4 +1,3 @@
-#!/usr/bin/env node
-import getDiff from './src/getdiff.js';
+import getDiff from './src/index.js';
 
 export default getDiff;
